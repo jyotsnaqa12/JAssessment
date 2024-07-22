@@ -14,6 +14,8 @@ export class Product {
     private readonly lastNameTxt: string = 'xyz'
     private readonly zipCodeNum: string = '27140'
     private readonly selectOptions = '.product_sort_container'
+    private readonly menuButton: string = '//button[contains(@id,"menu-btn")]';
+    private readonly logoutButton: string = '//a[@id="logout_sidebar_link"]';
 
     constructor(page: Page) {
         this.page = page;
@@ -76,4 +78,17 @@ export class Product {
 
         expect(prices).toEqual(sortedPrices);
     }
+
+    
+    public async clickOnLogout() {
+        await this.page.locator(this.menuButton).click();
+        await this.page.locator(this.logoutButton).click();
+    }
+
+
+    public async logOutAndLogBackIn(): Promise<void> {
+        await this.page.click(this.menuButton); // Open menu
+        await this.page.click(this.logoutButton); // Click logout
+       // await this.page.click(this.loginButton); // Click login button after log
+}
 }

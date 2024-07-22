@@ -12,25 +12,6 @@ Then('Select the cart \\(top-right)', async () => {
   await new Product(getPage()).cartButton();
 });
 
-Then('Select Checkout', async () => {
-  await new Product(getPage()).checkoutButton();
-});
-
-Then('Fill in the First Name, Last Name, and Zip\\/Postal Code', async () => {
-  await new Product(getPage()).checkoutInfo();
-});
-
-Then('Select Continue', async () => {
-  await new Product(getPage()).continueButton();
-});
-
-Then('Select Finish', async () => {
-  await new Product(getPage()).finishButton();
-});
-
-Then('Validate the text {string}', async (string) => {
-  await new Product(getPage()).successMessage();
-});
 
 Then('Sort the items by Price \\(low to high)', async function () {
   this.sortOption = 'Price (low to high)';

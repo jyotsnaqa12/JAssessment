@@ -12,3 +12,5 @@ Feature: Purchase Feature
   Then Select Continue
   Then Select Finish
   Then Validate the text 'Thank you for your order!'
+
+   
